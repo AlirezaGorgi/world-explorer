@@ -60,7 +60,9 @@ body {
   font-weight: var(--font-weight-semibold);
 }
 
-/* بخش جستجو */
+.main-content {
+  margin: 0 4rem;
+}
 .search-section {
   padding: 2rem 0;
 }
@@ -130,6 +132,7 @@ body {
 }
 
 .country {
+  width: 25rem;
   background-color: var(--color-element-light);
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);

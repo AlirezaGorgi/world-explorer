@@ -28,97 +28,93 @@
       </div>
     </header>
 
-    <main class="main-content d-none">
+    <main class="main-content">
       <!-- بخش جستجو -->
       <div class="search-section">
-        <div class="container">
-          <div class="search-bar">
-            <div class="search-bar__box">
-              <i class="bi bi-search search-bar__icon"></i>
-              <input
-                type="text"
-                class="search-bar__input"
-                placeholder="Search for a country..."
-              />
-            </div>
+        <div class="search-bar">
+          <div class="search-bar__box">
+            <i class="bi bi-search search-bar__icon"></i>
+            <input
+              type="text"
+              class="search-bar__input"
+              placeholder="Search for a country..."
+            />
+          </div>
 
-            <div class="search-bar__dropdown">
-              <button
-                class="search-bar__dropdown-btn btn dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Filter by Region
-              </button>
-              <ul class="search-bar__dropdown-menu dropdown-menu">
-                <li><a class="dropdown-item" href="#">Africa</a></li>
-                <li><a class="dropdown-item" href="#">America</a></li>
-                <li><a class="dropdown-item" href="#">Asia</a></li>
-                <li><a class="dropdown-item" href="#">Europe</a></li>
-                <li><a class="dropdown-item" href="#">Oceania</a></li>
-              </ul>
-            </div>
+          <div class="search-bar__dropdown">
+            <button
+              class="search-bar__dropdown-btn btn dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Filter by Region
+            </button>
+            <ul class="search-bar__dropdown-menu dropdown-menu">
+              <li><a class="dropdown-item" href="#">Africa</a></li>
+              <li><a class="dropdown-item" href="#">America</a></li>
+              <li><a class="dropdown-item" href="#">Asia</a></li>
+              <li><a class="dropdown-item" href="#">Europe</a></li>
+              <li><a class="dropdown-item" href="#">Oceania</a></li>
+            </ul>
           </div>
         </div>
       </div>
 
       <!-- بخش کشورها -->
       <div class="countries-section">
-        <div class="container">
-          <div class="row g-4">
-            <!-- کشور ۱ -->
-            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-              <div class="country">
-                <div class="country__image">
-                  <img
-                    src="https://flagcdn.com/w320/br.png"
-                    alt="Brazil Flag"
-                    class="country__image-item"
-                  />
-                </div>
-                <div class="country__content">
-                  <p class="country__name">Brazil</p>
-                  <div class="country__desc">
-                    <p class="country__info">
-                      Population:
-                      <span class="country__info-desc">206,135,893</span>
-                    </p>
-                    <p class="country__info">
-                      Region: <span class="country__info-desc">Americas</span>
-                    </p>
-                    <p class="country__info">
-                      Capital: <span class="country__info-desc">Brasilia</span>
-                    </p>
-                  </div>
+        <div class="row g-5">
+          <!-- کشور ۱ -->
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="country">
+              <div class="country__image">
+                <img
+                  src="https://flagcdn.com/w320/br.png"
+                  alt="Brazil Flag"
+                  class="country__image-item"
+                />
+              </div>
+              <div class="country__content">
+                <p class="country__name">Brazil</p>
+                <div class="country__desc">
+                  <p class="country__info">
+                    Population:
+                    <span class="country__info-desc">206,135,893</span>
+                  </p>
+                  <p class="country__info">
+                    Region: <span class="country__info-desc">Americas</span>
+                  </p>
+                  <p class="country__info">
+                    Capital: <span class="country__info-desc">Brasilia</span>
+                  </p>
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- کشور ۲ -->
-            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-              <div class="country">
-                <div class="country__image">
-                  <img
-                    src="https://flagcdn.com/w320/de.png"
-                    alt="Germany Flag"
-                    class="country__image-item"
-                  />
-                </div>
-                <div class="country__content">
-                  <p class="country__name">Germany</p>
-                  <div class="country__desc">
-                    <p class="country__info">
-                      Population:
-                      <span class="country__info-desc">81,770,900</span>
-                    </p>
-                    <p class="country__info">
-                      Region: <span class="country__info-desc">Europe</span>
-                    </p>
-                    <p class="country__info">
-                      Capital: <span class="country__info-desc">Berlin</span>
-                    </p>
-                  </div>
+          <!-- کشور ۲ -->
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="country">
+              <div class="country__image">
+                <img
+                  src="https://flagcdn.com/w320/de.png"
+                  alt="Germany Flag"
+                  class="country__image-item"
+                />
+              </div>
+              <div class="country__content">
+                <p class="country__name">Germany</p>
+                <div class="country__desc">
+                  <p class="country__info">
+                    Population:
+                    <span class="country__info-desc">81,770,900</span>
+                  </p>
+                  <p class="country__info">
+                    Region: <span class="country__info-desc">Europe</span>
+                  </p>
+                  <p class="country__info">
+                    Capital: <span class="country__info-desc">Berlin</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -126,7 +122,7 @@
         </div>
       </div>
     </main>
-    <div class="details">
+    <div class="details d-none">
       <button class="details-btn">
         <i class="bi bi-arrow-left arrow-button"></i> Back
       </button>
