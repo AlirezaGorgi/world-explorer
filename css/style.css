@@ -5,109 +5,200 @@
   padding: 0;
   box-sizing: border-box;
 }
-:root {
-  /* -----------------------
-     Colors - Light Mode
-  ----------------------- */
-  --color-bg-light: hsl(0, 0%, 99%);
-  --color-text-light: hsl(200, 15%, 8%);
-  --color-input-light: hsl(0, 0%, 50%);
-  --color-element-light: hsl(0, 100%, 100%);
 
-  /* -----------------------
-     Colors - Dark Mode
-  ----------------------- */
+:root {
+  /* Colors - Light Mode */
+  --color-bg-light: hsl(0, 0%, 98%);
+  --color-text-light: hsl(200, 15%, 8%);
+  --color-input-light: hsl(0, 0%, 52%);
+  --color-element-light: hsl(0, 0%, 100%);
+
+  /* Colors - Dark Mode */
   --color-bg-dark: hsl(207, 26%, 17%);
-  --color-text-dark: hsl(0, 100%, 100%);
+  --color-text-dark: hsl(0, 0%, 100%);
   --color-element-dark: hsl(209, 23%, 22%);
 
-  /* -----------------------
-     Typography
-  ----------------------- */
+  /* Typography */
   --font-family-base: "Nunito Sans", sans-serif;
   --font-weight-light: 300;
   --font-weight-semibold: 600;
   --font-weight-bold: 800;
-
   --font-size-homepage: 14px;
-  --font-size-detail: 16px;
-
-  /* Breakpoints */
-  --breakpoint-mobile: 375px;
-  --breakpoint-desktop: 1440px;
 }
+
 body {
   font-family: var(--font-family-base);
   font-weight: var(--font-weight-light);
   font-size: var(--font-size-homepage);
-  line-height: 1.6;
   background-color: var(--color-bg-light);
   color: var(--color-text-light);
-  transition: background-color 0.3s ease, color 0.3s ease;
   min-height: 100vh;
 }
 
+/* هدر */
 .top-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 5rem;
+  padding: 1.5rem 1rem;
   background-color: var(--color-element-light);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .top-bar__title {
   font-weight: var(--font-weight-bold);
-  font-size: 1.5rem;
-  color: var(--color-text-light);
-}
-
-.top-bar__dark-mode {
-  display: flex;
-  align-items: center;
+  font-size: 1.2rem;
 }
 
 .top-bar__btn {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.4rem 1rem;
   border: none;
-  border-radius: 6px;
-  background-color: var(--color-element-light);
-  color: var(--color-text-light);
-  font-weight: var(--font-weight-semibold);
+  background: none;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: var(--font-weight-semibold);
 }
 
-.top-bar__btn:hover {
-  background-color: var(--color-input-light);
+/* بخش جستجو */
+.search-section {
+  padding: 2rem 0;
 }
 
-.top-bar__icon {
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-body.dark-mode .top-bar {
+@media (min-width: 768px) {
+  .search-bar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .top-bar {
+    padding: 1.5rem 4rem;
+  }
+}
+
+.search-bar__box {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+}
+
+.search-bar__icon {
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-input-light);
+}
+
+.search-bar__input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3.5rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-element-light);
+  font-size: 0.9rem;
+}
+
+.search-bar__dropdown {
+  width: 200px;
+}
+
+.search-bar__dropdown-btn {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-element-light);
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* بخش کشورها */
+.countries-section {
+  padding: 0 0 3rem 0;
+}
+
+.country {
+  background-color: var(--color-element-light);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  height: 100%;
+}
+
+.country:hover {
+  transform: translateY(-4px);
+}
+
+.country__image {
+  height: 160px;
+  overflow: hidden;
+}
+
+.country__image-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.country__content {
+  padding: 1.5rem;
+}
+
+.country__name {
+  font-weight: var(--font-weight-bold);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.country__info {
+  margin-bottom: 0.3rem;
+}
+
+.country__info-desc {
+  color: var(--color-input-light);
+}
+
+/* دارک مود */
+body.dark-mode {
   background-color: var(--color-bg-dark);
-}
-
-body.dark-mode .top-bar__title {
   color: var(--color-text-dark);
 }
 
-body.dark-mode .top-bar__btn {
+body.dark-mode .top-bar,
+body.dark-mode .search-bar__input,
+body.dark-mode .search-bar__dropdown-btn,
+body.dark-mode .country {
   background-color: var(--color-element-dark);
   color: var(--color-text-dark);
 }
 
-body.dark-mode .top-bar__btn:hover {
-  background-color: var(--color-element-light);
+body.dark-mode .country__info-desc {
+  color: var(--color-text-dark);
+  opacity: 0.8;
 }
 
-body.dark-mode .top-bar__icon {
-  color: var(--color-text-dark);
+/* ریسپانسیو container */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 4rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 6rem;
+  }
 }
