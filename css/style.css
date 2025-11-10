@@ -1,0 +1,113 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  /* -----------------------
+     Colors - Light Mode
+  ----------------------- */
+  --color-bg-light: hsl(0, 0%, 99%);
+  --color-text-light: hsl(200, 15%, 8%);
+  --color-input-light: hsl(0, 0%, 50%);
+  --color-element-light: hsl(0, 100%, 100%);
+
+  /* -----------------------
+     Colors - Dark Mode
+  ----------------------- */
+  --color-bg-dark: hsl(207, 26%, 17%);
+  --color-text-dark: hsl(0, 100%, 100%);
+  --color-element-dark: hsl(209, 23%, 22%);
+
+  /* -----------------------
+     Typography
+  ----------------------- */
+  --font-family-base: "Nunito Sans", sans-serif;
+  --font-weight-light: 300;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 800;
+
+  --font-size-homepage: 14px;
+  --font-size-detail: 16px;
+
+  /* Breakpoints */
+  --breakpoint-mobile: 375px;
+  --breakpoint-desktop: 1440px;
+}
+body {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-homepage);
+  line-height: 1.6;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 5rem;
+  background-color: var(--color-element-light);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.top-bar__title {
+  font-weight: var(--font-weight-bold);
+  font-size: 1.5rem;
+  color: var(--color-text-light);
+}
+
+.top-bar__dark-mode {
+  display: flex;
+  align-items: center;
+}
+
+.top-bar__btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--color-element-light);
+  color: var(--color-text-light);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.top-bar__btn:hover {
+  background-color: var(--color-input-light);
+}
+
+.top-bar__icon {
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .top-bar {
+  background-color: var(--color-bg-dark);
+}
+
+body.dark-mode .top-bar__title {
+  color: var(--color-text-dark);
+}
+
+body.dark-mode .top-bar__btn {
+  background-color: var(--color-element-dark);
+  color: var(--color-text-dark);
+}
+
+body.dark-mode .top-bar__btn:hover {
+  background-color: var(--color-element-light);
+}
+
+body.dark-mode .top-bar__icon {
+  color: var(--color-text-dark);
+}
