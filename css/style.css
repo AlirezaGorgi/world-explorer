@@ -170,6 +170,51 @@ body {
 .country__info-desc {
   color: var(--color-input-light);
 }
+/* start details style. */
+.details {
+  margin-left: 5rem;
+}
+.details-btn {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 0.2rem 1rem;
+  margin-top: 3rem;
+  border-radius: 5px;
+}
+.arrow-button {
+  margin-right: 1rem;
+}
+.details-img {
+}
+
+.detail-row {
+  margin-top: 4rem;
+}
+
+.details-infos {
+  display: flex;
+  gap: 16rem;
+}
+.details-title {
+  font-weight: var(--font-weight-bold);
+  font-size: 1.2rem;
+}
+
+.Border-countries {
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+}
+.box {
+  margin-left: 1rem;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.3rem 1.5rem;
+}
+/* finish details style */
 
 /* دارک مود */
 body.dark-mode {
@@ -188,17 +233,4 @@ body.dark-mode .country {
 body.dark-mode .country__info-desc {
   color: var(--color-text-dark);
   opacity: 0.8;
-}
-
-/* ریسپانسیو container */
-@media (min-width: 768px) {
-  .container {
-    padding: 0 4rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    padding: 0 6rem;
-  }
 }
