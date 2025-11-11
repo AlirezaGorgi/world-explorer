@@ -33,6 +33,8 @@ body {
   background-color: var(--color-bg-light);
   color: var(--color-text-light);
   min-height: 100vh;
+  visibility: hidden;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* هدر */
@@ -253,4 +255,9 @@ body.dark-mode .country {
 body.dark-mode .country__info-desc {
   color: var(--color-text-dark);
   opacity: 0.8;
+}
+
+body.dark-mode .top-bar__icon,
+body.dark-mode .top-bar__btn-text {
+  color: #ffffff; /* سفید */
 }

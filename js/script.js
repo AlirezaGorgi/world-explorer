@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchSection = document.querySelector(".search-section");
   const detailsSection = document.querySelector(".details");
   const backBtn = document.querySelector(".details-btn");
-
+  const darkModeBtn = document.querySelector(".top-bar__btn");
+  const darkModeIcon = document.querySelector(".top-bar__icon");
+  const darkModeText = document.querySelector(".top-bar__btn-text");
   const detailsTitle = document.querySelector(".details-title");
   const detailsImg = document.querySelector(".details-img");
   const detailsInfosLeft = document.querySelector(".details-infos-left");
@@ -47,7 +49,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
       countriesContainer.innerHTML = data.map(createCountryCard).join("");
 
-      // 3️⃣ اضافه کردن event listener به هر کارت
+      const savedMode = localStorage.getItem("theme");
+
+      if (savedMode === "dark") {
+        document.body.classList.add("dark-mode");
+        darkModeIcon.classList.remove("bi-moon");
+        darkModeIcon.classList.add("bi-sun");
+        darkModeText.textContent = "Ligth Mode";
+      }
+      darkModeBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        darkModeIcon.classList.toggle("bi-moon");
+        darkModeIcon.classList.toggle("bi-sun");
+        if (document.body.classList.contains("dark-mode")) {
+          darkModeText.textContent = "Light Mode";
+          localStorage.setItem("theme", "dark");
+        } else {
+          darkModeText.textContent = "Dark Mode";
+          localStorage.setItem("theme", "light");
+        }
+      });
+      document.body.style.visibility = "visible";
+
       const countriesCards = document.querySelectorAll(".country");
       countriesCards.forEach((card) => {
         card.addEventListener("click", () => {
@@ -60,12 +83,10 @@ document.addEventListener("DOMContentLoaded", () => {
             (country) => country.name === getName
           );
 
-          // 4️⃣ پر کردن اطلاعات جزئیات
           detailsTitle.textContent = selectedCountry.name;
           detailsImg.src = selectedCountry.flags.png;
           detailsImg.alt = selectedCountry.name;
 
-          // سمت چپ
           detailsInfosLeft.innerHTML = "";
           detailsInfosLeft.insertAdjacentHTML(
             "beforeend",
@@ -96,7 +117,6 @@ document.addEventListener("DOMContentLoaded", () => {
           `
           );
 
-          // سمت راست
           detailsInfosRight.innerHTML = "";
           detailsInfosRight.insertAdjacentHTML(
             "beforeend",
@@ -142,10 +162,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
 
-      // 5️⃣ دکمه برگشت
       backBtn.addEventListener("click", () => {
         detailsSection.classList.add("d-none");
         countriesContainer.classList.remove("d-none");
+        searchSection.classList.remove("d-none");
       });
     })
     .catch((err) => console.error("Error loading data:", err));
