@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const countriesContainer = document.querySelector(".countries-section .row");
   const searchSection = document.querySelector(".search-section");
   const detailsSection = document.querySelector(".details");
+  const searchInput = document.querySelector(".search-bar__input");
   const backBtn = document.querySelector(".details-btn");
   const darkModeBtn = document.querySelector(".top-bar__btn");
   const darkModeIcon = document.querySelector(".top-bar__icon");
@@ -12,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const detailsInfosRight = document.querySelector(".details-infos-right");
   const borderCountries = document.querySelector(".Border-countries");
 
-  // 1️⃣ گرفتن داده‌ها
   fetch("./js/data.json")
     .then((res) => res.json())
     .then((data) => {
@@ -70,6 +70,22 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
       document.body.style.visibility = "visible";
+
+      searchInput.addEventListener("input", () => {
+        const searchValue = searchInput.value.toLowerCase();
+        const countriesCards = document.querySelectorAll(".country");
+        countriesCards.forEach((card) => {
+          const countryName = card
+            .querySelector(".country__name")
+            .textContent.toLowerCase();
+
+          if (countryName.includes(searchValue)) {
+            card.parentElement.style.display = "block";
+          } else {
+            card.parentElement.style.display = "none";
+          }
+        });
+      });
 
       const countriesCards = document.querySelectorAll(".country");
       countriesCards.forEach((card) => {
