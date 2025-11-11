@@ -175,7 +175,7 @@ body {
 }
 /* start details style. */
 .details {
-  margin-left: 5rem;
+  margin-left: 4rem;
 }
 .details-btn {
   background-color: #fff;
@@ -183,18 +183,35 @@ body {
   display: flex;
   align-items: center;
   border: none;
-  padding: 0.2rem 1rem;
+  padding: 0.5rem 2.5rem;
   margin-top: 3rem;
   border-radius: 5px;
+  cursor: pointer;
+}
+.details-btn:hover {
+  background-color: var(--color-input-light);
 }
 .arrow-button {
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 .details-img {
 }
 
 .detail-row {
-  margin-top: 4rem;
+  margin-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5rem;
+}
+.details-img-container {
+  min-width: 500px;
+}
+.details-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .details-infos {
