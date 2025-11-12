@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const darkModeBtn = document.querySelector(".top-bar__btn");
   const darkModeIcon = document.querySelector(".top-bar__icon");
   const darkModeText = document.querySelector(".top-bar__btn-text");
+  const regionFilters = document.querySelectorAll(".dropdown-item");
+  const dropdownToggle = document.querySelector(".dropdown-toggle");
   const detailsTitle = document.querySelector(".details-title");
   const detailsImg = document.querySelector(".details-img");
   const detailsInfosLeft = document.querySelector(".details-infos-left");
@@ -83,6 +85,67 @@ document.addEventListener("DOMContentLoaded", () => {
           } else {
             card.parentElement.style.display = "none";
           }
+        });
+      });
+
+      function filterByRegion(region) {
+        const countriesCards = document.querySelectorAll(".country");
+
+        countriesCards.forEach((card) => {
+          const infoDescSpans = card.querySelectorAll(".country__info-desc");
+          const countryRegion = infoDescSpans[1].textContent.trim(); // دومین span = Region
+          console.log(countryRegion, region);
+          if (region === "All" || countryRegion === region) {
+            card.parentElement.style.display = "block";
+          } else {
+            card.parentElement.style.display = "none";
+          }
+        });
+      }
+
+      let selectedRegion = "All"; // Region انتخابی، پیش‌فرض همه
+      let searchValue = ""; // مقدار Input
+
+      function updateCountries() {
+        const countriesCards = document.querySelectorAll(".country");
+
+        countriesCards.forEach((card) => {
+          const countryName = card
+            .querySelector(".country__name")
+            .textContent.toLowerCase();
+          const infoDescSpans = card.querySelectorAll(".country__info-desc");
+          const countryRegion = infoDescSpans[1].textContent.trim(); // دومین span = Region
+
+          const matchRegion =
+            selectedRegion === "All" || countryRegion === selectedRegion;
+          const matchSearch = countryName.startsWith(searchValue);
+
+          // فقط وقتی که هر دو شرط برقرار بود نمایش بده
+          if (matchRegion && matchSearch) {
+            card.parentElement.style.display = "block";
+          } else {
+            card.parentElement.style.display = "none";
+          }
+        });
+      }
+
+      searchInput.addEventListener("input", (e) => {
+        searchValue = e.target.value.toLowerCase();
+        updateCountries();
+      });
+
+      regionFilters.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          e.preventDefault();
+          selectedRegion = item.dataset.region;
+          searchInput.value = "";
+          searchValue = "";
+          const dropdownToggle = document.querySelector(
+            ".search-bar__dropdown-btn"
+          );
+          dropdownToggle.textContent =
+            selectedRegion === "All" ? "Filter by Region" : selectedRegion;
+          updateCountries();
         });
       });
 
