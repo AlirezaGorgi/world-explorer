@@ -4,7 +4,7 @@ An interactive web app to explore countries around the world. Click on any count
 
 Where in the World? 🌍
 
-Live Demo: git
+Live Demo:[ git](https://alirezagorgi.github.io/world-explorer/)
 
 📝 Description
 
