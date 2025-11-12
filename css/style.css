@@ -74,17 +74,11 @@ body {
   flex-direction: column;
   gap: 2rem;
 }
-
-@media (min-width: 768px) {
-  .search-bar {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .top-bar {
-    padding: 1.5rem 4rem;
-  }
+.countries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
 }
 
 .search-bar__box {
@@ -128,19 +122,18 @@ body {
   align-items: center;
 }
 
-/* بخش کشورها */
 .countries-section {
   padding: 0 0 3rem 0;
 }
 
 .country {
-  width: 25rem;
   background-color: var(--color-element-light);
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.2s ease;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .country:hover {
@@ -148,6 +141,7 @@ body {
 }
 
 .country__image {
+  width: 100%;
   height: 160px;
   overflow: hidden;
 }
@@ -159,7 +153,10 @@ body {
 }
 
 .country__content {
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .country__name {
@@ -195,8 +192,6 @@ body {
 }
 .arrow-button {
   margin-right: 0.5rem;
-}
-.details-img {
 }
 
 .detail-row {
@@ -260,4 +255,41 @@ body.dark-mode .country__info-desc {
 body.dark-mode .top-bar__icon,
 body.dark-mode .top-bar__btn-text {
   color: #ffffff; /* سفید */
+}
+
+@media (max-width: 1200px) {
+  .countries-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+  }
+}
+@media (max-width: 900px) {
+  .countries-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .search-container {
+    flex-direction: column;
+  }
+
+  .search-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .countries-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  h1 {
+    margin-bottom: 15px;
+  }
 }

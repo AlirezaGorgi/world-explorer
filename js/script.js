@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const countriesContainer = document.querySelector(".countries-section .row");
+  const countriesContainer = document.querySelector(".countries-grid");
   const searchSection = document.querySelector(".search-section");
   const detailsSection = document.querySelector(".details");
   const searchInput = document.querySelector(".search-bar__input");
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       function createCountryCard(country) {
         return `
-          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+          <div class="countries-grid">
             <div class="country">
               <div class="country__image">
                 <img src="${country.flags.png}" alt="${
