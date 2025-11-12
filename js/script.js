@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("./js/data.json")
     .then((res) => res.json())
     .then((data) => {
-      // 2️⃣ ساخت کارت‌ها
       const createCountryCard = (country) => `
         <div class="col-lg-3 col-md-4 col-sm-6 col-12">
           <div class="country">
@@ -79,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .querySelector(".country__name")
             .textContent.toLowerCase();
 
-          if (countryName.includes(searchValue)) {
+          if (countryName.startsWith(searchValue)) {
             card.parentElement.style.display = "block";
           } else {
             card.parentElement.style.display = "none";
