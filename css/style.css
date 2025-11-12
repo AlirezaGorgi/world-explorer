@@ -257,18 +257,7 @@ body.dark-mode .top-bar__btn-text {
   color: #ffffff; /* سفید */
 }
 
-@media (max-width: 1200px) {
-  .countries-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 50px;
-  }
-}
 @media (max-width: 900px) {
-  .countries-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-  }
-
   .search-container {
     flex-direction: column;
   }
@@ -277,17 +266,34 @@ body.dark-mode .top-bar__btn-text {
     width: 100%;
     margin-bottom: 20px;
   }
+  .detail-row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .details-img-container {
+    min-width: 80%;
+  }
+
+  .details-infos {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .Border-countries {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }
 
 @media (max-width: 600px) {
-  .countries-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
   header {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .details-img {
+    margin-left: -18px;
   }
   h1 {
     margin-bottom: 15px;
