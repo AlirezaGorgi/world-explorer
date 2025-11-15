@@ -6,7 +6,6 @@
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384‑sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
     <link
@@ -14,7 +13,6 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="./css/style.css" />
-
     <title>Where in the world?</title>
   </head>
   <body>
@@ -83,57 +81,11 @@
 
       <div class="countries-section">
         <div class="countries-grid">
-          <div class="country">
-            <div class="country__image">
-              <img
-                src="https://flagcdn.com/w320/br.png"
-                alt="Brazil Flag"
-                class="country__image-item"
-              />
-            </div>
-            <div class="country__content">
-              <p class="country__name">Brazil</p>
-              <div class="country__desc">
-                <p class="country__info">
-                  Population:
-                  <span class="country__info-desc">206,135,893</span>
-                </p>
-                <p class="country__info">
-                  Region: <span class="country__info-desc">Americas</span>
-                </p>
-                <p class="country__info">
-                  Capital: <span class="country__info-desc">Brasilia</span>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="country">
-            <div class="country__image">
-              <img
-                src="https://flagcdn.com/w320/de.png"
-                alt="Germany Flag"
-                class="country__image-item"
-              />
-            </div>
-            <div class="country__content">
-              <p class="country__name">Germany</p>
-              <div class="country__desc">
-                <p class="country__info">
-                  Population: <span class="country__info-desc">81,770,900</span>
-                </p>
-                <p class="country__info">
-                  Region: <span class="country__info-desc">Europe</span>
-                </p>
-                <p class="country__info">
-                  Capital: <span class="country__info-desc">Berlin</span>
-                </p>
-              </div>
-            </div>
-          </div>
+          <!-- render by js -->
         </div>
       </div>
     </main>
+
     <div class="details d-none">
       <button class="details-btn">
         <i class="bi bi-arrow-left arrow-button"></i> Back
@@ -149,55 +101,16 @@
         <div class="details-content">
           <p class="details-title">Brasil</p>
           <div class="details-infos">
-            <div class="details-infos-left">
-              <p class="country__info">
-                Native Name:
-                <span class="country__info-desc">Bra</span>
-              </p>
-              <p class="country__info">
-                Population:
-                <span class="country__info-desc">81,770,900</span>
-              </p>
-              <p class="country__info">
-                Region
-                <span class="country__info-desc">europe</span>
-              </p>
-              <p class="country__info">
-                Sub Region:
-                <span class="country__info-desc">western</span>
-              </p>
-              <p class="country__info">
-                Capital:
-                <span class="country__info-desc">Brasilia</span>
-              </p>
-            </div>
-            <div class="details-infos-right">
-              <p class="country__info">
-                Top Level Domain:
-                <span class="country__info-desc">be</span>
-              </p>
-              <p class="country__info">
-                Currencies:
-                <span class="country__info-desc">Euro</span>
-              </p>
-              <p class="country__info">
-                Language:
-                <span class="country__info-desc">Dutch</span>
-              </p>
-            </div>
+            <div class="details-infos-left"></div>
+            <div class="details-infos-right"></div>
           </div>
-          <div class="Border-countries">
-            <p class="country__info">Border Countries</p>
-            <span class="country__info-desc box">France</span
-            ><span class="country__info-desc box">Germany</span
-            ><span class="country__info-desc box">neterlands</span>
-          </div>
+          <div class="Border-countries"></div>
         </div>
       </div>
     </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384‑FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
     <script src="./js/script.js"></script>

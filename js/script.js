@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const darkModeIcon = document.querySelector(".top-bar__icon");
   const darkModeText = document.querySelector(".top-bar__btn-text");
   const regionFilters = document.querySelectorAll(".dropdown-item");
-  const dropdownToggle = document.querySelector(".dropdown-toggle");
   const detailsTitle = document.querySelector(".details-title");
   const detailsImg = document.querySelector(".details-img");
   const detailsInfosLeft = document.querySelector(".details-infos-left");
@@ -18,35 +17,34 @@ document.addEventListener("DOMContentLoaded", () => {
   let selectedRegion = "All";
   let searchValue = "";
 
+  // Fetch data
   fetch("./js/data.json")
     .then((res) => res.json())
     .then((data) => {
       function createCountryCard(country) {
         return `
-          <div class="countries-grid">
-            <div class="country">
-              <div class="country__image">
-                <img src="${country.flags.png}" alt="${
+          <div class="country">
+            <div class="country__image">
+              <img src="${country.flags.png}" alt="${
           country.name
         }" class="country__image-item"/>
-              </div>
-              <div class="country__content">
-                <p class="country__name">${country.name}</p>
-                <div class="country__desc">
-                  <p class="country__info">
-                    Population: <span class="country__info-desc">${country.population.toLocaleString()}</span>
-                  </p>
-                  <p class="country__info">
-                    Region: <span class="country__info-desc">${
-                      country.region
-                    }</span>
-                  </p>
-                  <p class="country__info">
-                    Capital: <span class="country__info-desc">${
-                      country.capital
-                    }</span>
-                  </p>
-                </div>
+            </div>
+            <div class="country__content">
+              <p class="country__name">${country.name}</p>
+              <div class="country__desc">
+                <p class="country__info">
+                  Population: <span class="country__info-desc">${country.population.toLocaleString()}</span>
+                </p>
+                <p class="country__info">
+                  Region: <span class="country__info-desc">${
+                    country.region
+                  }</span>
+                </p>
+                <p class="country__info">
+                  Capital: <span class="country__info-desc">${
+                    country.capital
+                  }</span>
+                </p>
               </div>
             </div>
           </div>
@@ -65,8 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const matchRegion =
             selectedRegion === "All" || countryRegion === selectedRegion;
           const matchSearch = countryName.startsWith(searchValue);
-          card.parentElement.style.display =
-            matchRegion && matchSearch ? "block" : "none";
+          card.style.display = matchRegion && matchSearch ? "block" : "none";
         });
       }
 
@@ -127,6 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
           darkModeIcon.classList.replace("bi-moon", "bi-sun");
           darkModeText.textContent = "Light Mode";
         }
+
         darkModeBtn.addEventListener("click", () => {
           document.body.classList.toggle("dark-mode");
           darkModeIcon.classList.toggle("bi-moon");
